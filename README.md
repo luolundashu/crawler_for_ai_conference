@@ -14,3 +14,5 @@ To extract papers from iclr, NeurIPS, and icml, run 'ml_get_paper.py'. You will 
 Modify the 'driver' to the address of your Chrome driver. After that, you only need to modify the 'key_word_list' and 'conference_name_list'.
 This script scrapes the website: https://openreview.net."
 
+Finally,Welcome to star on GitHub!
+
