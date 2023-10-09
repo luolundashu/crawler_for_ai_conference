@@ -42,7 +42,7 @@ if  __name__ =='__main__':
         if 'WACV' in conference_name:
             url = "https://openaccess.thecvf.com/{}".format(conference_name)
         else:
-            url = "https://openaccess.thecvf.com/{}?day=2019-11-01".format(conference_name)
+            url = "https://openaccess.thecvf.com/{}?day=all".format(conference_name)
         response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
         paper_group = soup.body.find_all("div",recursive=False)[2].dl
