@@ -12,7 +12,8 @@ This script scrapes the website: https://openaccess.thecvf.com.
 
 To extract papers from iclr, NeurIPS, and icml, run 'ml_get_paper.py'. You will need to download the Chrome browser and the Chrome driver. 
 Modify the 'driver' to the address of your Chrome driver. After that, you only need to modify the 'key_word_list' and 'conference_name_list'.
-This script scrapes the website: https://openreview.net."
+This script scrapes the website: https://openreview.net."  For papers from other conferences on this website, just make minor modifications to
+the URL and it should work seamlessly.
 
 Finally,Welcome to star on GitHub!
 
