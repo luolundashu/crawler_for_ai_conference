@@ -34,7 +34,7 @@ if  __name__ =='__main__':
     os.environ['HTTPS_PROXY'] = "http://127.0.0.1:7890"
 
     key_word_list=['Anomaly Detection','Time Series','Bayesian','Out of Distribution','Diffusion']
-    conference_name_list=['ICCV2019'] #目前可选ICCV CVPR WACV
+    conference_name_list=['ICCV2023','CVPR2023'] #目前可选ICCV CVPR WACV
 
     for conference_name in conference_name_list:
 
