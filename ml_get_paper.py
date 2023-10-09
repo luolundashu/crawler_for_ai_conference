@@ -36,7 +36,7 @@ def create_web(paper_list,conference_name,key_word,url_name,patience=20):
                 if response.status_code == 200:
                     with open("{}/{}.pdf".format(paper_dir_father,paper_name), "wb") as pdf_file:
                         pdf_file.write(response.content)
-                        time.sleep(0.5)
+                        time.sleep(3)
                     break
                 else:
                     print('第{}次尝试写入,地址{}'.format(pat,paper_down_dir))
