@@ -7,10 +7,15 @@ import os
 import requests
 import time
 from tqdm import tqdm
+import re
 
 def contains_keyword(keyword, text):
     return keyword.lower() in text.lower()
 
+def remove_symbols(input_string):
+    # 使用正则表达式去除特定符号，保留连字符（-）
+    cleaned_string = re.sub(r'[^\w\s-]', '', input_string)
+    return cleaned_string
 
 def create_web(paper_list,conference_name,key_word,url_name,patience=20):
     if contains_keyword('iclr', conference_name):
@@ -28,8 +33,8 @@ def create_web(paper_list,conference_name,key_word,url_name,patience=20):
             paper_name = paper_list[i].text.strip()
         else:
             paper_name = paper_list[i].find('h4').text.strip()
-        paper_name = paper_name.replace('/', '')
-        paper_name = paper_name.replace(':', '')
+        paper_name = remove_symbols(paper_name)
+
         if contains_keyword(key_word, paper_name):
             if contains_keyword('icml', conference_name):
                 paper_down_dir = paper_list[i].find('a', class_='pdf-link')['href']
@@ -84,7 +89,7 @@ if __name__ =='__main__':
                 # 循环处理多个页面
                 for i in range(1000):
                     # 获取当前页面的 HTML
-                    i = i +1
+                    i = i+1
                     if i>1:
                         try :
                             if contains_keyword('icml',conference_name):
