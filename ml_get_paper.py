@@ -54,7 +54,7 @@ def crete_url(conference_name):
             'top_100':'https://openreview.net/group?id=ICLR.cc/{}/Conference#poster'.format(conference_name[-4:])
         }
     elif contains_keyword('icml',conference_name):
-        url={"top_100":"https://openreview.net/group?id=ICML.cc/{}/Conference".format(conference_name[--4:])}
+        url={"top_100":"https://openreview.net/group?id=ICML.cc/{}/Conference".format(conference_name[-4:])}
     elif contains_keyword('NeurIPS',conference_name):
         url={"top_100":"https://openreview.net/group?id=NeurIPS.cc/{}/Conference".format(conference_name[-4:])}
 
