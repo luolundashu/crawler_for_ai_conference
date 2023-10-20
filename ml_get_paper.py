@@ -56,7 +56,7 @@ def create_web(paper_list,conference_name,key_word,url_name,patience=20):
 
 
 
-def crete_url(conference_name):
+def create_url(conference_name):
     if contains_keyword('iclr',conference_name):
         url ={
             'top_5':'https://openreview.net/group?id=ICLR.cc/{}/Conference#notable-top-5-'.format(conference_name[-4:]),
@@ -79,7 +79,7 @@ if __name__ =='__main__':
     os.environ['HTTPS_PROXY'] = "http://127.0.0.1:7890"
 
     for conference_name in conference_name_list:
-        url = crete_url(conference_name)
+        url = create_url(conference_name)
         for keyword in keyword_list:
             # 打开目标页面
             for url_name in url:
