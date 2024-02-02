@@ -1,3 +1,6 @@
+News  2024.2.2：
+Due to the recent updates on OpenReview, the web scraper is currently not very effective. I will soon be on winter break and plan to maintain the code during this period, making it more versatile and adaptable.
+
 "This is the first repository I've uploaded, and I'm very excited.
 
 Motivation:
