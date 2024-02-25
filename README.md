@@ -1,4 +1,5 @@
 News  2024.2.25：
+
 The latest version of the script has been written and can now scrape paper from ICML, ICLR, NeurIPS, CVPR, ICCV, and WACV after continuous debugging. Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.
 
 To extract papers from iclr, NeurIPS, and icml, run 'new_ml_get_paper.py'. To extract papers from cvpr, iccv, and wacv, run 'cv_get_paper.py'. 
