@@ -1,3 +1,6 @@
+News  2024.2.25：
+The latest version of the script has been written and can now scrape paper from ICML, ICLR, NeurIPS, CVPR, ICCV, and WACV after continuous debugging. Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.
+
 News  2024.2.2：
 Due to the recent updates on OpenReview, the web scraper is currently not very effective. I will soon be on winter break and plan to maintain the code during this period, making it more versatile and adaptable.
 
