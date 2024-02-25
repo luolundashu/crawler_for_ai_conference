@@ -1,6 +1,12 @@
 News  2024.2.25：
 The latest version of the script has been written and can now scrape paper from ICML, ICLR, NeurIPS, CVPR, ICCV, and WACV after continuous debugging. Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.
 
+To extract papers from iclr, NeurIPS, and icml, run 'ml_get_paper.py'. You will need to download the Chrome browser and the Chrome driver. 
+Modify the 'driver' to the address of your Chrome driver. After that, you only need to modify the 'key_word_list' and 'conference_name_list'.
+This script scrapes the website: https://openreview.net."  For papers from other conferences on this website, just make minor modifications to
+the URL（the function of crete_url()） and it should work seamlessly.
+
+
 News  2024.2.2：
 Due to the recent updates on OpenReview, the web scraper is currently not very effective. I will soon be on winter break and plan to maintain the code during this period, making it more versatile and adaptable.
 
