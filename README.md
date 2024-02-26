@@ -1,4 +1,4 @@
-News  2024.2.25：
+**News  2024.2.25：**
 
 The latest version of the script has been written and can now crawl paper from ICML, ICLR, NeurIPS, CVPR, ICCV, and WACV after continuous debugging. **Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.**
 
@@ -21,22 +21,22 @@ ________________________________________________________________________________
 
 
 
-News  2024.2.2：
+**News  2024.2.2：**
 Due to the recent updates on OpenReview, the web scraper is currently not very effective. I will soon be on winter break and plan to maintain the code during this period, making it more versatile and adaptable.
 
 
 ______________________________________________________________________________________________________________________________________________________________________
 
 
-"This is the first repository I've uploaded, and I'm very excited.
+**"This is the first repository I've uploaded, and I'm very excited.**
 
-Motivation:
+**Motivation:**
 When trying to keep up with top AI conferences, extracting content based on keywords is highly inefficient. So, 
 with the intention of creating a tool that allows input of conference names and keywords to automatically extract titles and package them, I wrote this repository.
 
 For users in China, modifying the proxy settings can lead to faster downloads.
 
-How to use:
+**How to use:**
 To extract papers from cvpr, iccv, and wacv, run 'cv_get_paper.py'. You only need to modify the 'key_word_list' and 'conference_name_list'. 
 This script scrapes the website: https://openaccess.thecvf.com.
 
@@ -49,6 +49,6 @@ Finally,Welcome to star on GitHub!
 
 ______________________________________________________________________________________________________________________________________________________________________
 
-Future word:
-Implement downloading based on keywords in the abstract, and enhance download speed.
+**Future word:**
+Implement downloading based on keywords in the abstract, and enhance download speed(**Because I am not familiar with distributed crawling, this is quite challenging for me and it might not be updated in the future.**).
 
