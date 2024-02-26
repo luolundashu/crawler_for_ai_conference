@@ -10,6 +10,7 @@ Finally, read more articles and publish more papers.
 
 Welcome to star!
 
+______________________________________________________________________________________________________________________________________________________________________
 
 
 
@@ -22,6 +23,10 @@ Welcome to star!
 
 News  2024.2.2：
 Due to the recent updates on OpenReview, the web scraper is currently not very effective. I will soon be on winter break and plan to maintain the code during this period, making it more versatile and adaptable.
+
+
+______________________________________________________________________________________________________________________________________________________________________
+
 
 "This is the first repository I've uploaded, and I'm very excited.
 
@@ -41,6 +46,8 @@ This script scrapes the website: https://openreview.net."  For papers from other
 the URL（the function of crete_url()） and it should work seamlessly.
 
 Finally,Welcome to star on GitHub!
+
+______________________________________________________________________________________________________________________________________________________________________
 
 Future word:
 Implement downloading based on keywords in the abstract, and enhance download speed.
