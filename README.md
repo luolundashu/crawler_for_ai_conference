@@ -2,11 +2,12 @@
 
 The latest version of the script has been written and can now crawl paper from ICML, ICLR, NeurIPS, CVPR, ICCV, and WACV after continuous debugging. **Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.**
 
-To extract papers from ICLR, NeurIPS, and ICML, run '**new_ml_get_paper.py**'. To extract papers from CVPR, ICCV, and WACV, run '**cv_get_paper.py**'. 
+To extract papers from ICLR, NeurIPS, and ICML, run '**new_ml_get_paper.py**'. 
+To extract papers from CVPR, ICCV, and WACV, run '**cv_get_paper.py**'. 
 
 After using a crawler to fetch PDFs, you can also use the '**make_paper_to_label.py**' script to categorize all PDFs according to keywords.
 
-Finally, read more articles and publish more papers.
+**Finally, read more articles and publish more papers.**
 
 Welcome to star!
 
