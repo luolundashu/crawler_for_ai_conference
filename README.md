@@ -5,9 +5,9 @@ The conference crawler now includes support for **ECCV**.
 
 The crawler now supports the three major computer vision conferences **(CVPR, ICCV, ECCV)** and the three major machine learning conferences **(NeurIPS, ICML, ICLR)**.
 
-To extract papers from ICLR, NeurIPS, and ICML, run '**new_ml_get_paper.py**'. 
+To extract papers from **ICLR, NeurIPS, and ICML**, run '**new_ml_get_paper.py**'. 
 
-To extract papers from CVPR, ICCV, ECCV, and WACV, run '**cv_get_paper.py**'. 
+To extract papers from **CVPR, ICCV, ECCV, and WACV**, run '**cv_get_paper.py**'. 
 
 **News  2024.2.25：**
 
