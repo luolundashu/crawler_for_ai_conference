@@ -1,3 +1,7 @@
+**News  2024.4.12：**
+To support crawling for ECCV, the latest update is available in **get_eccv.py**.
+The crawler now supports the three major computer vision conferences **(CVPR, ICCV, ECCV)** and the three major machine learning conferences **(NeurIPS, ICML, ICLR)**.
+
 **News  2024.2.25：**
 
 The latest version of the script has been written and can now crawl paper from ICML, ICLR, NeurIPS, CVPR, ICCV, and WACV after continuous debugging. **Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.**
