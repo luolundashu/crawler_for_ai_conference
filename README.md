@@ -1,5 +1,7 @@
 **News  2024.4.12：**
+
 To support crawling for ECCV, the latest update is available in **get_eccv.py**.
+
 The crawler now supports the three major computer vision conferences **(CVPR, ICCV, ECCV)** and the three major machine learning conferences **(NeurIPS, ICML, ICLR)**.
 
 **News  2024.2.25：**
