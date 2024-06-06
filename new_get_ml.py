@@ -41,17 +41,17 @@ def create_web(paper_list,conference_name,key_word,id_name,paper_tppe,patience=2
 
             paper_down_dir = 'https://openreview.net{}'.format(paper_down_dir)
             for pat in range(patience):
-                response = requests.get(paper_down_dir)
-                if response.status_code == 200:
-                    with open("{}/{}.pdf".format(paper_dir_father,paper_name), "wb") as pdf_file:
+                try:
+                    response = requests.get(paper_down_dir)
+                    with open("{}/{}.pdf".format(paper_dir_father, paper_name), "wb") as pdf_file:
                         pdf_file.write(response.content)
-
                     break
-                else:
-                    print('第{}次尝试写入,地址{}'.format(pat,paper_down_dir))
-                    if pat==patience-1:
-                        print('{}为写入成功，网址{}'.format(pat,paper_down_dir))
-                        continue
+
+                except:
+                    print('请求失败，暂停100秒')
+                    time.sleep(100)
+                    pass
+
 
 
 
@@ -79,13 +79,13 @@ def contains_keyword_list(keyword, text_list):
 
 
 if __name__ =='__main__':
-    keyword_list = ['diffusion']#['Diffusion','Anomaly Detection','Time Series','Bayesian','Out of Distribution']
+    keyword_list = ['shot']#['Diffusion','Anomaly Detection','Time Series','Bayesian','Out of Distribution']
     options = Options()
     driver = webdriver.Chrome(service=Service('./chromedriver-win64/chromedriver.exe'), options=options)
     os.environ['HTTP_PROXY'] = "http://127.0.0.1:7890"
     os.environ['HTTPS_PROXY'] = "http://127.0.0.1:7890"
     sleep_patience=1
-    conference_names = ['ICML2023','NeurIPS2023','ICML2023','ICLR2023']
+    conference_names = ['ICLR2024','ICLR2023','ICLR2022']
 
     for conference_name in conference_names:
         url = crete_url(conference_name)
