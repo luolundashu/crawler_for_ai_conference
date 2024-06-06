@@ -1,3 +1,8 @@
+**News  2024.6.6：**
+This update has enhanced the stability of web scraping!
+
+
+
 **News  2024.4.12：**
 
 
