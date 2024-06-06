@@ -27,10 +27,18 @@ def create_web(web,conference_name,key_word):
         os.makedirs(paper_dir_father)
 
     if contains_keyword(key_word, name):
-        response = requests.get(web)
-        with open("{}/{}.pdf".format(paper_dir_father,name), "wb") as pdf_file:
-            pdf_file.write(response.content)
-            time.sleep(1)
+        #response = requests.get(web,verify=False)
+        for pat in range(20):
+            try:
+                response = requests.get(web)
+                with open("{}/{}.pdf".format(paper_dir_father,name), "wb") as pdf_file:
+                    pdf_file.write(response.content)
+                    time.sleep(3)
+                break
+            except:
+                print('请求失败，暂停100秒')
+                time.sleep(100)
+                pass
     return name
 
 
@@ -49,25 +57,27 @@ def create_eccv_web(paper_name,paper_pdf,conference_name,paper_year_dic,key_word
         paper_dir_father = './paper/{}/{}'.format(conference_name,key_word)
         if os.path.exists(paper_dir_father) is not True:
             os.makedirs(paper_dir_father)
+
         for pat in range(patience):
-            response = requests.get(pdf_web)
-            if response.status_code == 200:
-                with open("{}/{}.pdf".format(paper_dir_father,remove_symbols(paper_name)), "wb") as pdf_file:
+            try:
+                response = requests.get(pdf_web)
+                with open("{}/{}.pdf".format(paper_dir_father, remove_symbols(paper_name)), "wb") as pdf_file:
                     pdf_file.write(response.content)
+                    time.sleep(3)
                 break
-            else:
-                print('第{}次尝试写入,地址{}'.format(pat,pdf_web))
-                if pat==patience-1:
-                    print('{}为写入失败，网址{}'.format(pat,pdf_web))
-                    continue
+            except:
+                print('请求失败，暂停100秒')
+                time.sleep(100)
+                pass
+
     return paper_name
 
 if  __name__ =='__main__':
     os.environ['HTTP_PROXY'] = "http://127.0.0.1:7890"
     os.environ['HTTPS_PROXY'] = "http://127.0.0.1:7890"
 
-    key_word_list=['patch','Anomaly Detection']
-    conference_name_list=['ECCV2022','ECCV2020','CVPR2023','ICCV2023'] #目前可选ICCV CVPR WACV
+    key_word_list=['shot']#'Diffusion','Time Series','Bayesian','Out of Distribution'
+    conference_name_list=['ECCV2022','WACV2024','WACV2023'] #目前可选ICCV CVPR WACV
 
     for conference_name in conference_name_list:
         if 'ECCV' not in conference_name:
