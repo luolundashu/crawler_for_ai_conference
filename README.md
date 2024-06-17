@@ -4,7 +4,7 @@ Because of my love for this script, it will be taken down in 10 days.
 
 **Everyone hates CloseAI, everyone is CloseAI!**
 
-
+______________________________________________________________________________________________________________________________________________________________________
 
 **News  2024.6.6：**
 
