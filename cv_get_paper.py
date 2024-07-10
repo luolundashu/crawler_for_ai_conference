@@ -14,7 +14,7 @@ def remove_symbols(input_string):
     cleaned_string = re.sub(r'[^\w\s-]', '', input_string)
     return cleaned_string
 
-def create_web(web,conference_name,key_word):
+def create_web(web,conference_name,key_word_list):
     web = web.find('a')['href']
     parts = web.split('/')
     name = parts[-1].split('.')[0]
@@ -22,62 +22,63 @@ def create_web(web,conference_name,key_word):
     name = name.split('_')[1:-1]
     name = ' '.join(name)
 
-    paper_dir_father = './paper/{}/{}'.format(conference_name,key_word)
-    if os.path.exists(paper_dir_father) is not True:
-        os.makedirs(paper_dir_father)
-
-    if contains_keyword(key_word, name):
-        #response = requests.get(web,verify=False)
-        for pat in range(20):
-            try:
-                response = requests.get(web)
-                with open("{}/{}.pdf".format(paper_dir_father,name), "wb") as pdf_file:
-                    pdf_file.write(response.content)
-                    time.sleep(3)
-                break
-            except:
-                print('请求失败，暂停100秒')
-                time.sleep(100)
-                pass
-    return name
-
-
-
-
-def create_eccv_web(paper_name,paper_pdf,conference_name,paper_year_dic,key_word,patience=20):
-
-    paper_name =paper_name.a.text.replace('\n','')
-    paper_pdf =paper_pdf.a['href']
-    if contains_keyword(key_word, paper_name):
-        if paper_name not in paper_year_dic['{}'.format(conference_name[-4:])]:
-            return
-        pdf_web = 'https://www.ecva.net/{}'.format(paper_pdf) #eccv_2022
-
-
+    for key_word in key_word_list:
         paper_dir_father = './paper/{}/{}'.format(conference_name,key_word)
         if os.path.exists(paper_dir_father) is not True:
             os.makedirs(paper_dir_father)
+        if contains_keyword(key_word, name):
+            #response = requests.get(web,verify=False)
+            for pat in range(20):
+                try:
+                    response = requests.get(web)
+                    with open("{}/{}.pdf".format(paper_dir_father,name), "wb") as pdf_file:
+                        pdf_file.write(response.content)
+                        time.sleep(3)
+                    break
+                except:
+                    print('请求失败，暂停100秒')
+                    time.sleep(100)
+                    pass
+    #return name
 
-        for pat in range(patience):
-            try:
-                response = requests.get(pdf_web)
-                with open("{}/{}.pdf".format(paper_dir_father, remove_symbols(paper_name)), "wb") as pdf_file:
-                    pdf_file.write(response.content)
-                    time.sleep(3)
-                break
-            except:
-                print('请求失败，暂停100秒')
-                time.sleep(100)
-                pass
 
-    return paper_name
+
+
+def create_eccv_web(paper_name,paper_pdf,conference_name,paper_year_dic,key_word_list,patience=20):
+
+    paper_name =paper_name.a.text.replace('\n','')
+    paper_pdf =paper_pdf.a['href']
+    for key_word in key_word_list:
+        if contains_keyword(key_word, paper_name):
+            if paper_name not in paper_year_dic['{}'.format(conference_name[-4:])]:
+                return
+            pdf_web = 'https://www.ecva.net/{}'.format(paper_pdf) #eccv_2022
+
+
+            paper_dir_father = './paper/{}/{}'.format(conference_name,key_word)
+            if os.path.exists(paper_dir_father) is not True:
+                os.makedirs(paper_dir_father)
+
+            for pat in range(patience):
+                try:
+                    response = requests.get(pdf_web)
+                    with open("{}/{}.pdf".format(paper_dir_father, remove_symbols(paper_name)), "wb") as pdf_file:
+                        pdf_file.write(response.content)
+                        time.sleep(3)
+                    break
+                except:
+                    print('请求失败，暂停100秒')
+                    time.sleep(100)
+                    pass
+
+    #return paper_name
 
 if  __name__ =='__main__':
     os.environ['HTTP_PROXY'] = "http://127.0.0.1:7890"
     os.environ['HTTPS_PROXY'] = "http://127.0.0.1:7890"
 
-    key_word_list=['shot']#'Diffusion','Time Series','Bayesian','Out of Distribution'
-    conference_name_list=['ECCV2022','WACV2024','WACV2023'] #目前可选ICCV CVPR WACV
+    key_word_list=['unmixing','self']#'Diffusion','Time Series','Bayesian','Out of Distribution'
+    conference_name_list=['CVPR2024'] #目前可选ICCV CVPR WACV
 
     for conference_name in conference_name_list:
         if 'ECCV' not in conference_name:
@@ -91,10 +92,10 @@ if  __name__ =='__main__':
             paper_name_all = paper_group.find_all('dt')
             lenth_web=len(paper_name_all)
 
-            for key_word in key_word_list:
-                for i in tqdm(range(lenth_web)):
-                    name = create_web(paper_name_all[i],conference_name,key_word)
-                    tqdm.write('会议{}__关键词{}__{}/{}分析完成'.format(conference_name,key_word,i,lenth_web))
+            #for key_word in key_word_list:
+            for i in tqdm(range(lenth_web)):
+                create_web(paper_name_all[i],conference_name,key_word_list)
+                tqdm.write('会议{}__{}/{}分析完成'.format(conference_name,i,lenth_web))
 
 
         elif 'ECCV' in conference_name:
@@ -110,10 +111,10 @@ if  __name__ =='__main__':
 
             paper_name_list = soup.find_all('dt', class_='ptitle')
             paper_pdf_list = soup.find_all('dd')[1::2]
-            for key_word in key_word_list:
-                for i in tqdm(range(len(paper_name_list))):
-                    name = create_eccv_web(paper_name_list[i], paper_pdf_list[i], conference_name, paper_year_dic, key_word)
-                    tqdm.write(
-                        '会议{}__关键词{}__{}/{}分析完成'.format(conference_name, key_word, i, len(paper_name_list)))
+
+            for i in tqdm(range(len(paper_name_list))):
+                create_eccv_web(paper_name_list[i], paper_pdf_list[i], conference_name, paper_year_dic, key_word_list)
+                tqdm.write(
+                    '会议{}__{}/{}分析完成'.format(conference_name, i, len(paper_name_list)))
 
 
