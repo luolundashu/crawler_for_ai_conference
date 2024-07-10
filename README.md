@@ -17,7 +17,7 @@ The conference crawler now includes support for **ECCV**.
 
 The crawler now supports the three major computer vision conferences **(CVPR, ICCV, ECCV)** and the three major machine learning conferences **(NeurIPS, ICML, ICLR)**.
 
-To extract papers from **ICLR, NeurIPS, and ICML**, run '**new_ml_get_paper.py**'. 
+To extract papers from **ICLR, NeurIPS, and ICML**, run '**ml_get_paper.py**'. 
 
 To extract papers from **CVPR, ICCV, ECCV, and WACV**, run '**cv_get_paper.py**'. 
 
@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 The latest version of the script has been written and can now crawl paper from ICML, ICLR, NeurIPS, CVPR, ICCV, and WACV after continuous debugging. **Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.**
 
-To extract papers from ICLR, NeurIPS, and ICML, run '**new_ml_get_paper.py**'. 
+To extract papers from ICLR, NeurIPS, and ICML, run '**ml_get_paper.py**'. 
 To extract papers from CVPR, ICCV, and WACV, run '**cv_get_paper.py**'. 
 
 After using a crawler to fetch PDFs, you can also use the '**make_paper_to_label.py**' script to categorize all PDFs according to keywords.
