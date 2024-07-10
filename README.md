@@ -1,3 +1,9 @@
+**News  2024.7.10：**
+
+
+This update change the crawling logic to make it faster
+
+
 **News  2024.6.6：**
 
 This update has enhanced the stability of web scraping!
