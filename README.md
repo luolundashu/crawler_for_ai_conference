@@ -1,7 +1,7 @@
 **News  2024.7.10：**
 
 
-This update change the crawling logic to make it faster
+This update change the crawling logic to make it faster!!!
 
 
 **News  2024.6.6：**
