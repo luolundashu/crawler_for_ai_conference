@@ -1,6 +1,8 @@
 **Start use**
 
 **First Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.**
+![image](https://github.com/user-attachments/assets/13a68c41-a290-408e-80da-b1cfb222b258)
+
 
 To extract papers from **ICLR, NeurIPS, and ICML**, run '**ml_get_paper.py**'. 
 
