@@ -1,6 +1,6 @@
 **Start use**
 
-. **First Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.**
+**First Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.**
 
 To extract papers from ICLR, NeurIPS, and ICML, run '**ml_get_paper.py**'. 
 To extract papers from CVPR, ICCV, ECCV and WACV, run '**cv_get_paper.py**'. 
@@ -9,6 +9,7 @@ After using a crawler to fetch PDFs, you can also use the '**make_paper_to_label
 
 **Finally, read more articles and publish more papers.**
 
+______________________________________________________________________________________________________________________________________________________________________
 
 **News  2024.7.10：**
 
