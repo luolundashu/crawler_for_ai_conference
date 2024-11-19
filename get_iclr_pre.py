@@ -36,7 +36,7 @@ def count_paper_rate(web,driver_child,patient =10):
                                                              rate_idx + 1)).text[0]
                     rate_list.append(int(rate))
                 except:
-                    break
+                    continue
             rate_average = sum(rate_list) / len(rate_list)
             break
         except:
