@@ -11,11 +11,16 @@ To extract papers from **ICLR, NeurIPS, and ICML**, run '**ml_get_paper.py**'.
 
 To extract papers from **CVPR, ICCV, ECCV and WACV**, run '**cv_get_paper.py**'. 
 
+If you want to view high-scoring papers from ICLR, run '**get_iclr_pre.py**
+
 After using a crawler to fetch PDFs, you can also use the '**make_paper_to_label.py**' script to categorize all PDFs according to keywords.
 
 **Finally, read more articles and publish more papers.**
 
 ______________________________________________________________________________________________________________________________________________________________________
+**News  2024.11.19：**
+
+Add the crawling of ICLR top-ranked papers by average score index.
 
 **News  2024.7.10：**
 
