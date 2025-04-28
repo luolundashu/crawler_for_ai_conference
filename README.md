@@ -1,4 +1,4 @@
-**Start use!!! Start use!!! Start use!!!**
+![image](https://github.com/user-attachments/assets/d6250f84-7767-4c35-a5b4-fbca4c57609d)**Start use!!! Start use!!! Start use!!!**
 
 **First Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.**
 
@@ -6,6 +6,9 @@
 
 ![image](https://github.com/user-attachments/assets/13a68c41-a290-408e-80da-b1cfb222b258)
 
+**You need to modify the proxy port in the code to your own proxy port, as shown below.**
+
+![image](https://github.com/user-attachments/assets/d5774651-7da3-4e55-baae-e2ff1f7e27c5)
 
 To extract papers from **ICLR, NeurIPS, and ICML**, run '**ml_get_paper.py**'. 
 
