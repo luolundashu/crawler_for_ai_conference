@@ -2,7 +2,7 @@
 
 **First Please update Chrome to the latest version and download the corresponding version of the driver from https://googlechromelabs.github.io/chrome-for-testing/.**
 
-**Please note that it is the chromedriver. See the image below**
+**For users in China, Please note that it is the chromedriver. See the image below**
 
 ![image](https://github.com/user-attachments/assets/13a68c41-a290-408e-80da-b1cfb222b258)
 
